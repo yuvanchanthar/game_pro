@@ -5,6 +5,8 @@ void main (){
 }
 
 class MainPage extends StatelessWidget{
+  const MainPage({super.key});
+
   @override
   Widget build(BuildContext context) {
    return Scaffold(
@@ -25,10 +27,10 @@ class MainPage extends StatelessWidget{
                 
               
               },
-              child: Text("START"),
               shape: CircleBorder(),
               height: 150,
-              minWidth: 150,),
+              minWidth: 150,
+              child: Text("START"),),
             ),
             
             
@@ -48,10 +50,10 @@ class MainPage extends StatelessWidget{
                   MaterialPageRoute(builder: (context)=>GamePage()));
 
               },
-              child: Text("START"),
               shape: CircleBorder(),
               height: 150,
-              minWidth: 150,),
+              minWidth: 150,
+              child: Text("START"),),
             ),
           )
           
@@ -66,6 +68,8 @@ class MainPage extends StatelessWidget{
   }
 }
 class GamePage extends StatefulWidget{
+  const GamePage({super.key});
+
   
   @override
   State<GamePage> createState() => _GamePageState();
@@ -169,7 +173,7 @@ class _GamePageState extends State<GamePage> {
 class ResultPage extends StatelessWidget{
   int score=0;
   String player="";
-  ResultPage(this.score,this.player);
+  ResultPage(this.score,this.player, {super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -185,8 +189,8 @@ class ResultPage extends StatelessWidget{
               Navigator.pop(context);
         
             },
-            child: Text("Restart Game"),
-            color: Colors.white,)
+            color: Colors.white,
+            child: Text("Restart Game"),)
           ],
         ),
       )
